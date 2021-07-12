@@ -1,13 +1,30 @@
-# ci-cd-node-docker-digital-ocean-app
+# CI/CD pipeline for Docker with DigitalOcean App Platform and GitHub Actions
 
-CI/CD for Docker with DigitalOcean App Platform and GitHub Actions
+How to run a node.js application in the [Digital Ocean App Platform](https://www.digitalocean.com/products/app-platform/)
 
 ## Before start
 
 1. Create a [Digital Ocean PAT](https://docs.digitalocean.com/reference/api/create-personal-access-token/)
 1. Add the PAT to your [secrets](https://docs.github.com/en/actions/reference/encrypted-secrets) with the name `DO_API_TOKEN`
 
-## The pipeline
+## Application Confi
+```yaml
+name: nodejs-ci-cd-digital-ocean
+region: ams
+services:
+- http_port: 80
+  image:
+    registry_type: DOCR
+    repository: nodejs-ci-cd-digital-ocean
+    tag: {{TAG_VERSION}}
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  name: nodejs-ci-cd-digital-ocean
+  routes:
+  - path: /
+```
+
+## Pipeline
 
 ```yaml
 name: Node.js CI
