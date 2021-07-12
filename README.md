@@ -7,7 +7,7 @@ How to run a node.js application in the [Digital Ocean App Platform](https://www
 1. Create a [Digital Ocean PAT](https://docs.digitalocean.com/reference/api/create-personal-access-token/)
 1. Add the PAT to your [secrets](https://docs.github.com/en/actions/reference/encrypted-secrets) with the name `DO_API_TOKEN`
 
-## Application Confi
+## Application Config
 ```yaml
 name: nodejs-ci-cd-digital-ocean
 region: ams
