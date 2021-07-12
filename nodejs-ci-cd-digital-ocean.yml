@@ -1,0 +1,13 @@
+name: nodejs-ci-cd-digital-ocean
+region: ams
+services:
+- http_port: 80
+  image:
+    registry_type: DOCR
+    repository: nodejs-ci-cd-digital-ocean
+    tag: {{TAG_VERSION}}
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  name: nodejs-ci-cd-digital-ocean
+  routes:
+  - path: /
